@@ -1,123 +1,747 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="utf-8">
-    <meta name="description" content="Google Maps Geocodificación simple">
-    <title>Geolocalizacion de salones uninpahu</title>
-    <script src="https://maps.googleapis.com/maps/api/js?sensor=false&language=es"> </script>
-    <style type="text/css">
+<html lang="es-CO">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="profile" href="http://gmpg.org/xfn/11">
+      <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+      <title>Uninpahu</title>
+      <link rel="canonical" href="https://www.uninpahu.edu.co/">
+      <meta property="og:locale" content="es_ES">
+      <meta property="og:type" content="website">
+      <meta property="og:title" content="Inicio - Uninpahu">
+      <meta property="og:url" content="https://www.uninpahu.edu.co/">
+      <meta property="og:site_name" content="Uninpahu">
+      <meta name="mobile-web-app-capable" content="yes">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="apple-mobile-web-app-title" content="Uninpahu - Institución universitaria">
+      <meta name="msapplication-TileImage" content="https://www.uninpahu.edu.co/wp-content/uploads/2020/07/UNINPAHU-ICONO.png">
 
-      html,body{
-        margin-top:1%;
-        padding:0;
-        width:100%;
-        height:500px;
-        font-family:Trebuchet MS,verdana,arial;
-        background-color:blue;
-      }
+    
+      <link rel="icon" href="https://www.uninpahu.edu.co/wp-content/uploads/2020/07/UNINPAHU-ICONO-150x150.png" sizes="32x32">
+      <link rel="icon" href="https://www.uninpahu.edu.co/wp-content/uploads/2020/07/UNINPAHU-ICONO.png" sizes="192x192">
+      <link rel="apple-touch-icon" href="https://www.uninpahu.edu.co/wp-content/uploads/2020/07/UNINPAHU-ICONO.png">
+      <link rel="stylesheet" id="edsanimate-animo-css-css" href="https://www.uninpahu.edu.co/wp-content/plugins/animate-it/assets/css/animate-animo.css?ver=5.9.1" media="all">
+      <link rel="stylesheet" id="contact-form-7-css" href="https://www.uninpahu.edu.co/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.5.6" media="all">
+      <link rel="stylesheet" id="crellyslider.min-css" href="https://www.uninpahu.edu.co/wp-content/plugins/crelly-slider/css/crellyslider.min.css?ver=1.4.5" media="all">
+      <link rel="stylesheet" id="events-manager-css" href="https://www.uninpahu.edu.co/wp-content/plugins/events-manager/includes/css/events_manager.css?ver=5.99912" media="all">
+      <link rel="stylesheet" id="bwg_fonts-css" href="https://www.uninpahu.edu.co/wp-content/plugins/photo-gallery/css/bwg-fonts/fonts.css?ver=0.0.1" media="all">
+      <link rel="stylesheet" id="sumoselect-css" href="https://www.uninpahu.edu.co/wp-content/plugins/photo-gallery/css/sumoselect.min.css?ver=3.3.24" media="all">
+      <link rel="stylesheet" id="mCustomScrollbar-css" href="https://www.uninpahu.edu.co/wp-content/plugins/photo-gallery/css/jquery.mCustomScrollbar.min.css?ver=3.1.5" media="all">
+      <link rel="stylesheet" id="bwg_googlefonts-css" href="https://fonts.googleapis.com/css?family=Ubuntu&amp;subset=greek,latin,greek-ext,vietnamese,cyrillic-ext,latin-ext,cyrillic" media="all">
+      <link rel="stylesheet" id="bwg_frontend-css" href="https://www.uninpahu.edu.co/wp-content/plugins/photo-gallery/css/styles.min.css?ver=1.6.2" media="all">
+      <link rel="stylesheet" id="megamenu-css" href="https://www.uninpahu.edu.co/wp-content/uploads/maxmegamenu/style.css?ver=3fbab0" media="all">
+      <link rel="stylesheet" id="dashicons-css" href="https://www.uninpahu.edu.co/wp-includes/css/dashicons.min.css?ver=5.9.1" media="all">
+      <link rel="stylesheet" id="child-understrap-styles-css" href="https://www.uninpahu.edu.co/wp-content/themes/understrap-child/css/child-theme.css?ver=0.5.5" media="all">
+      <link rel="stylesheet" id="estilos-zapata-css" href="https://www.uninpahu.edu.co/wp-content/themes/understrap-child/css/estilos.css?ver=0.5.5" media="all">
+      <link rel="stylesheet" id="zcffront-jquery-ui-css" href="https://www.uninpahu.edu.co/wp-content/plugins/zoho-crm-forms/assets/css/jquery-ui.css?ver=5.9.1" media="all">
+      <link rel="stylesheet" id="zcffront-end-styles-css" href="https://www.uninpahu.edu.co/wp-content/plugins/zoho-crm-forms/assets/css/frontendstyles.css?ver=5.9.1" media="all">
+      <link rel="stylesheet" id="kadence-blocks-rowlayout-css" href="https://www.uninpahu.edu.co/wp-content/plugins/kadence-blocks/dist/blocks/row.style.build.css?ver=2.3.0" media="all">
 
-      #container{
-        margin:0 auto;
-        width:90%;
-        height:100%;
-        background-color:#ccc;
-        padding:20px;
-      }
-      #mapa{
-        width:70%;
-        height:100%;
-        float:right;
-        width: 70%;
-        height: 100%;
-        float: right;
-        min-width: 500px;
-        min-height: 400px;
-      }
+		<link href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
+
+
+      <script src="https://www.uninpahu.edu.co/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend-gtag.min.js?ver=8.4.0" id="monsterinsights-frontend-script-js"></script>
+      <script src="https://www.uninpahu.edu.co/wp-includes/js/jquery/jquery.min.js?ver=3.6.0" id="jquery-core-js"></script>
+      <script src="https://www.uninpahu.edu.co/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" id="jquery-migrate-js"></script>
+      <script src="https://www.uninpahu.edu.co/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.9" id="regenerator-runtime-js"></script>
+      <script src="https://www.uninpahu.edu.co/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0" id="wp-polyfill-js"></script>
+      <script src="https://www.uninpahu.edu.co/wp-includes/js/jquery/ui/core.min.js?ver=1.13.1" id="jquery-ui-core-js"></script>
+      <script src="https://www.uninpahu.edu.co/wp-content/plugins/crelly-slider/js/jquery.crellyslider.min.js?ver=1.4.5" id="jquery.crellyslider.min-js"></script>
+      <script src="https://www.uninpahu.edu.co/wp-includes/js/jquery/ui/mouse.min.js?ver=1.13.1" id="jquery-ui-mouse-js"></script>
+      <script src="https://www.uninpahu.edu.co/wp-includes/js/jquery/ui/sortable.min.js?ver=1.13.1" id="jquery-ui-sortable-js"></script>
+
+      <script src="https://www.uninpahu.edu.co/wp-includes/js/jquery/ui/menu.min.js?ver=1.13.1" id="jquery-ui-menu-js"></script>
+      <script src="https://www.uninpahu.edu.co/wp-includes/js/dist/dom-ready.min.js?ver=ecda74de0221e1c2ce5c57cbb5af09d5" id="wp-dom-ready-js"></script>
+      <script src="https://www.uninpahu.edu.co/wp-includes/js/dist/hooks.min.js?ver=1e58c8c5a32b2e97491080c5b10dc71c" id="wp-hooks-js"></script>
+      <script src="https://www.uninpahu.edu.co/wp-includes/js/dist/i18n.min.js?ver=30fcecb428a0e8383d3776bcdd3a7834" id="wp-i18n-js"></script>
+
+   </head>
+   <body class="home page-template page-template-page-templates page-template-fullwidthpage page-template-page-templatesfullwidthpage-php page page-id-30 wp-custom-logo wp-embed-responsive mega-menu-primary group-blog" itemscope="" itemtype="http://schema.org/WebSite">
       
-      #texto{
-        width:25%;
-        height:100%;
-        float:left;vertical-align:middle;padding:2%
-      }
+      <div class="site" id="page">
+         <div class="container-fluid">
+            <div class="row f-blanco justify-content-center">
+               <div class="col-md-4 text-center logo-header"><a href="https://www.uninpahu.edu.co">
+                  <img src="https://www.uninpahu.edu.co/wp-content/themes/understrap-child/img/logo-uninpahu.svg" alt=""></a>
+               </div>
+            </div>
+            <div class="row menu-secundario justify-content-center align-items-center">
+               <div class="col-md-10 mx-auto text-center">
+                  <a href="https://www.uninpahu.edu.co/aspirantes">ASPIRANTES</a> <a href="https://www.uninpahu.edu.co/estudiantes">ESTUDIANTES</a>
+                  <a href="https://www.uninpahu.edu.co/egresados">EGRESADOS</a> <a href="https://www.uninpahu.edu.co/docentes">DOCENTES</a>
+                  <a href="https://www.uninpahu.edu.co/colaboradores">COLABORADORES</a>   
+               </div>
+               <div class="correo-c"><a href="#" target="_blank">E-mail <img src="https://www.uninpahu.edu.co/wp-content/themes/understrap-child/img/usuario.jpg" alt=""></a></div>
+            </div>
+         </div>
 
-      #texto input.navi{
-        font-size:18px;
-        width:90%;
-        height:30px;
-        margin-bottom:10px
-      }
-    </style>
-  </head>
-  <body>
-  <div id="container">
-  <!--al introducir los datos obtendremos las coordenadas (LatLng )que nos permite cambiar  var latlng para personalizar nuestro mapa -->
-  <section id="texto">
-    <h3>Salon a localizar</h3>
-    <!--se inserta la dirección completa que queremos mostrar en el mapa-->
-    <p>Sobreescriba la dirección<br>puede indicar coordenadas lat,lng separadas por coma (,):</p>
-    <input id="address" type="textbox" size="38" maxlength="80" value="" placeholder="Dirección o Lat, Lng" />
-    <br>
-    <!--nos devuelve la latitud-->
-    Latitud: <span style="color:red;" id="x"></span>
-    <br>
-    <!--nos devuelve la longitud-->
-    Longitud: <span style="color:red;" id="y"></span>
-    <br>
-    <!--nos devuelve la direcion completa-->
-    Dirección completa:<br><span style="color:blue;" id="direccion"></span>
-    <br>
-    <input type="button" class="navi" value="Localizar" onclick="codeAddress()">
-  </section>
-    <div id="mapa"></div>
-  </div>
+         <!-- Estilos formulario -->
+         <style>
+            .home .wp-block-latest-posts__list {margin-bottom: 3rem; margin-top: 2rem;}
+            .home .wp-block-latest-posts__list li {-webkit-box-shadow: 8px 18px 38px 0px rgba(0,0,0,0.18); -moz-box-shadow: 8px 18px 38px 0px rgba(0,0,0,0.18);
+            box-shadow: 8px 18px 38px 0px rgba(0,0,0,0.18);}
+            .home .wp-block-latest-posts__list li a, .home .wp-block-latest-posts__list li .wp-block-latest-posts__post-excerpt {padding: 12px;}
+            .home .wp-block-latest-posts__list li:not(:first-child) {    width: 48%;display: inline-block; vertical-align: text-top;}
+            .home .wp-block-latest-posts__list li:nth-child(2) {margin-right: 2%;}
+            .home .wp-block-latest-posts__list li:not(:first-child) .wp-block-latest-posts__featured-image  {/*height: 160px;*/
+            overflow: hidden; margin-bottom: 4px;}
+            .home .wp-block-latest-posts__list li:not(:first-child) .wp-block-latest-posts__post-excerpt {font-size: 0.6rem; text-align: justify;
+            margin-top: 0;padding-top: 2px; padding-bottom: 0;}
+            .home .wp-block-latest-posts__list li:not(:first-child) a {font-size: 0.8rem; font-weight: 900; color: #575757;padding-bottom: 0;margin-top: 0;padding-bottom: 0;}
+            .home .wp-block-latest-posts__list li:first-child {margin-bottom: 1.5rem; width: 98.5%;}
+            .home .wp-block-latest-posts__list li:first-child .wp-block-latest-posts__featured-image  {/*height: 264px;*/ overflow: hidden;margin-bottom: 4px;}
+            .home .wp-block-latest-posts__list li:first-child .wp-block-latest-posts__featured-image img {width: 100%;margin-top: -16%;}
+            .home .wp-block-latest-posts__list li:first-child a {font-size: 1.1rem; font-weight: 900; color: #575757; margin-top: 0;padding-bottom: 0;}
+            .home .wp-block-latest-posts__list li:first-child .wp-block-latest-posts__post-excerpt {font-size: 0.7rem; text-align: justify;
+            margin-top: 0;padding-top: 2px; padding-bottom: 4px; padding-left: 12px; padding-right: 12px;}
+            .page-template .wp-block-latest-posts__list a {padding: 0 8px; FONT-SIZE: 0.8rem; display: block; line-height: normal;}
+            .page-template .wp-block-latest-posts__list time {padding: 0 12px 8px;font-size: 0.6rem; margin-top: 0;}
+            #mega-menu-wrap-primary #mega-menu-primary p {
+            margin-bottom: 0;}
+            .single-event  .event-categories {display: none;}
+            h2.sin-barra:after {display: none;}
+            #tab-plan {scroll-margin-top: 700px;}
+            .table {border-radius: 6px; -webkit-box-shadow: 2px 2px 12px 0px rgba(0,0,0,0.25);
+            -moz-box-shadow: 2px 2px 12px 0px rgba(0,0,0,0.25);
+            box-shadow: 2px 2px 12px 0px rgba(0,0,0,0.25);}
+            h3.normal {display: block;}
+            h3.normal::after {display: none;}
+            .table td.borde-d, .table th.borde-d {border-right: 1px solid #dee2e6;}
+            .table-hover.t-naranja tbody tr:hover {color: white; background-color: #ff7f00;}
+            .table thead tr {background-color: #ff7f00; color: white; border-top-left-radius: 6px; border-top-right-radius: 6px;}
+            /*    FORMULARIOS ZOHO*/
+            #crmWebToEntityForm.zcwf_lblLeft {
+            width:100%;
+            padding: 4px 25px 12px;
+            margin: 0 auto;
+            box-sizing: border-box;}
+            #crmWebToEntityForm.zcwf_lblLeft * {box-sizing: border-box;}
+            #crmWebToEntityForm label {display: none;}
+            #crmWebToEntityForm * {direction: ltr;}
+            .zcwf_lblLeft .zcwf_title {word-wrap: break-word;padding: 0px 6px 5px;font-weight: bold;}
+            .zcwf_col_fld input, .zcwf_lblLeft .zcwf_col_fld_slt {width: 100%;}
+            .zcwf_lblLeft .zcwf_col_fld input[type=text], .zcwf_lblLeft .zcwf_col_fld textarea, .zcwf_lblLeft .zcwf_col_fld_slt,.zcwf_lblLeft .zcwf_col_fld input[type=number]  {
+            border-radius: 0!important;
+            border: none!important;
+            border-bottom: 1px solid #EE7F00!important;
+            height: 24px!important;
+            padding: 5px 0 0 0!important;
+            font-size: 0.8rem!important;
+            line-height: 1!important; color: #575757; outline: none;}
+            .zcwf_lblLeft .zcwf_col_lab {
+            width: 30%;
+            word-break: break-word;
+            padding: 0px 6px 0px;
+            margin-right: 10px;
+            margin-top: 5px;
+            float: left;
+            min-height: 1px;
+            }
+            .zcwf_lblLeft .zcwf_col_fld {
+            float: left;
+            width: 100%;
+            padding: 0px 6px 0px;
+            position: relative;}
+            .zcwf_lblLeft .zcwf_privacy{padding: 6px;}
+            .zcwf_lblLeft .wfrm_fld_dpNn{display: none;}
+            .dIB{display: inline-block;}
+            .zcwf_lblLeft .zcwf_row:after, .zcwf_lblLeft .zcwf_col_fld:after {
+            content: '';
+            display: table;
+            clear: both;
+            }
+            .zcwf_lblLeft .zcwf_col_help {
+            float: left;
+            margin-left: 7px;
+            font-size: 12px;
+            max-width: 100%;
+            word-break: break-word;
+            }
+            .zcwf_lblLeft .zcwf_help_icon {
+            cursor: pointer;
+            width: 16px;
+            height: 16px;
+            display: inline-block;
+            background: #fff;
+            border: 1px solid #ccc;
+            color: #ccc;
+            text-align: center;
+            font-size: 11px;
+            line-height: 16px;
+            font-weight: bold;
+            border-radius: 50%;
+            }
+            .zcwf_lblLeft .zcwf_row {margin: 0px 0px;}
+            .zcwf_lblLeft .formsubmit {
+            margin-right: 5px;}
+            .zcwf_lblLeft .zcwf_privacy_txt {
+            color: rgb(0, 0, 0);
+            font-size: 12px;
+            display: inline-block;
+            vertical-align: top;
+            color: #333;
+            padding-top: 2px;
+            margin-left: 6px;
+            }
+            .zcwf_lblLeft .zcwf_tooltip_over{
+            position: relative;
+            }
+            .zcwf_lblLeft .zcwf_tooltip_ctn{
+            position: absolute;background: #dedede;padding: 3px 6px;top: 3px;border-radius: 4px;word-break: break-all;min-width: 50px;max-width: 150px;color: #333;}
+            .newCustomchkbox-md {display: inline-block!important;}
+            .zcwf_privacy_txt {width: 90%;}
+            .zcwf_privacy .vat {width: 10px;}
+            .zcwf_button {border-radius: 0;    width: 48%!important;border: none;padding: 4px 6px; font-size: 0.9rem;}
+            .formsubmit {color: white;border-color: #EE7F00; background-color: #EE7F00!important;}
+            @media all and (max-width: 600px) {
+            .zcwf_lblLeft .zcwf_col_lab, .zcwf_lblLeft .zcwf_col_fld {width: auto;float: none !important;}
+            .zcwf_lblLeft .zcwf_col_help {width: 100%;}
+            }
+            .hover-efect figure {overflow: hidden;}
+            .hover-efect figure img {	-webkit-transform: scale(1);
+            transform: scale(1);
+            -webkit-transition: .3s ease-in-out;
+            transition: .3s ease-in-out;}
+            .hover-efect figure:hover img {-webkit-transform: scale(1.3);transform: scale(1.3);}
+         </style>
+         <div class="wrapper" id="full-width-page-wrapper">
+            <div class="container-fluid" id="content">
+               <div class="row">
+                  <div class="col-md-12 content-area" id="primary">
+                     <main class="site-main" id="main" role="main">
+                        <article class="post-30 page type-page status-publish hentry" id="post-30">
+                           <div class="entry-content">
+                              <div class="wp-block-kadence-rowlayout alignnone sombra">
+                                 <div id="kt-layout-id_c38008-f3" class="kt-row-layout-inner kt-layout-id_c38008-f3">
+                                    <div class="kt-row-column-wrap kt-has-2-columns kt-gutter-none kt-v-gutter-default kt-row-valign-middle kt-row-layout-left-golden kt-tab-layout-inherit kt-m-colapse-left-to-right kt-mobile-layout-row  kt-custom-first-width-75  kt-custom-second-width-25">
+                                       <div class="wp-block-kadence-column inner-column-1 kadence-column_3fab93-35">
+                                          <div class="kt-inside-inner-col">
+                                          	<!-- Mapa -->
+                                             <div style="display: block;" class="crellyslider-slider crellyslider-slider-full-width crellyslider-slider-PRINCIPAL crellyslider-2" id="crellyslider-2">
+                                                <div class="" style="width: 1907.25px; height: 580px;">
+                                                 	<div id="map" style=" position:absolute; top:0; bottom:0; width:100%; min-height: 500px;"></div>
+                                                </div>
+                                             </div>
+                                             <script type="text/javascript">
+                                                (function($) {
+	                                                $(document).ready(function() {
+		                                                $("#crellyslider-2").crellySlider({
+			                                                layout: 'full-width',
+			                                                responsive: 1,
+			                                                startWidth: 1220,
+			                                                startHeight: 580,
+			                                                automaticSlide: 1,
+			                                                showControls: 1,
+			                                                showNavigation: 0,
+			                                                enableSwipe: 1,
+			                                                showProgressBar: 0,
+			                                                pauseOnHover: 1,
+			                                                randomOrder: 0,
+			                                                startFromSlide: 0,
+			                                                beforeStart : function() {},
+			                                                beforeSetResponsive : function() {},
+			                                                beforeSlideStart : function() {},
+			                                                beforePause	: function() {},
+			                                                beforeResume : function() {},
+		                                                });
+	                                                });
+                                                })(jQuery);
+                                             </script>
+                                          </div>
+                                       </div>
+                                       <div class="wp-block-kadence-column inner-column-2 kadence-column_aa9652-25 formulario">
+                                          <div class="kt-inside-inner-col">
+                                             <p class="has-text-align-center">Si eres ASPIRANTE y quieres recibir mayor información de nuestros programas,</p>
+                                             <p class="has-text-align-center naranja black registrate"><strong>REGÍSTRATE AQUÍ</strong></p>
+                                             <div id="crmWebToEntityForm" class="zcwf_lblLeft crmWebToEntityForm" style="background-color: white;color: black;max-width: 600px;">
+                                                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                                                <form action="https://crm.zoho.com/crm/WebToLeadForm" name="WebToLeads3527873000036832025" method="POST" onsubmit="javascript:document.charset=&quot;UTF-8&quot;; return checkMandatory3527873000036832025()" accept-charset="UTF-8" siq_id="autopick_4076">
+                                                   <input type="text" style="display:none;" name="xnQsjsdp" value="7f88086b3e2299df4b1bc047a6f44f57cdd33c24355917925e67bccd69fd64d5">
+                                                   <input type="hidden" name="zc_gad" id="zc_gad" value="">
+                                                   <input type="text" style="display:none;" name="xmIwtLD" value="029d4bf4139a3314b8dc9b6223384075233ab6d17c681220e0297aba07719e2e">
+                                                   <input type="text" style="display:none;" name="actionType" value="TGVhZHM=">
+                                                   <input type="text" style="display:none;" name="returnURL" value="https://www.uninpahu.edu.co/gracias"> 
+                                                   <!-- Do not remove this code. -->
+                                                   <div class="zcwf_row">
+                                                      <div class="zcwf_col_lab" style="font-size:12px; font-family: Arial;"><label for="First Name">Nombre<span style="color:red;">*</span></label></div>
+                                                      <div class="zcwf_col_fld">
+                                                         <input type="text" id="First Name" name="First Name" maxlength="40" placeholder="Nombre*" pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ\s]+">
+                                                         <div class="zcwf_col_help"></div>
+                                                      </div>
+                                                   </div>
+                                                   <div class="zcwf_row">
+                                                      <div class="zcwf_col_lab" style="font-size:12px; font-family: Arial;"><label for="Last Name">Apellidos<span style="color:red;">*</span></label></div>
+                                                      <div class="zcwf_col_fld">
+                                                         <input type="text" id="Last Name" name="Last Name" maxlength="80" placeholder="Apellidos*" pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ\s]+">
+                                                         <div class="zcwf_col_help"></div>
+                                                      </div>
+                                                   </div>
+                                                   <div class="zcwf_row">
+                                                      <div class="zcwf_col_lab" style="font-size:12px; font-family: Arial;"><label for="LEADCF5">Programa de interés<span style="color:red;">*</span></label></div>
+                                                      <div class="zcwf_col_fld">
+                                                         <select class="zcwf_col_fld_slt" id="LEADCF5" name="LEADCF5">
+                                                            <option value="-None-">-Programa de interés*-</option>
+                                                            <option value="Profesional en Comunicación Social">Profesional en Comunicación Social</option>
+                                                            <option value="Profesional en Ingeniería de Software por ciclos Propedéuticos">Profesional en Ingeniería de Software por ciclos Propedéuticos</option>
+                                                            <option value="Profesional en Ciencias de la Información y Bibliotecología">Profesional en Ciencias de la Información y Bibliotecología</option>
+                                                            <option value="Profesional en Administración de Empresas">Profesional en Administración de Empresas</option>
+                                                            <option value="Profesional en Seguridad y Salud en el Trabajo">Profesional en Seguridad y Salud en el Trabajo</option>
+                                                            <option value="Profesional en Turismo y Gastronomía">Profesional en Turismo y Gastronomía</option>
+                                                            <option value="Tecnología en Comunicación Social y Periodismo">Tecnología en Comunicación Social y Periodismo</option>
+                                                            <option value="Tecnología en Producción Digital en Medios Audiovisuales">Tecnología en Producción Digital en Medios Audiovisuales</option>
+                                                            <option value="Tecnología en Administración de Sistemas de Información y Documentación">Tecnología en Administración de Sistemas de Información y Documentación</option>
+                                                            <option value="Tecnología en Computación y Desarrollo de Software">Tecnología en Computación y Desarrollo de Software</option>
+                                                            <option value="Tecnología en Comercio y Negocios Internacionales">Tecnología en Comercio y Negocios Internacionales</option>
+                                                            <option value="Tecnología en Administración del Talento Humano">Tecnología en Administración del Talento Humano</option>
+                                                            <option value="Tecnología en Seguridad y Salud en el Trabajo">Tecnología en Seguridad y Salud en el Trabajo</option>
+                                                            <option value="Tecnología en Gestión Turística y Hotelera">Tecnología en Gestión Turística y Hotelera</option>
+                                                            <option value="Técnica Profesional en Fotografía">Técnica Profesional en Fotografía</option>
+                                                            <option value="&nbsp;.&nbsp;">&nbsp;</option>
+                                                         </select>
+                                                         <div class="zcwf_col_help"></div>
+                                                      </div>
+                                                   </div>
+                                                   <div class="zcwf_row">
+                                                      <div class="zcwf_col_lab" style="font-size:12px; font-family: Arial;"><label for="LEADCF13">Tipo de documento de identidad<span style="color:red;">*</span></label></div>
+                                                      <div class="zcwf_col_fld">
+                                                         <select class="zcwf_col_fld_slt" id="LEADCF13" name="LEADCF13">
+                                                            <option value="-None-">-Tipo de documento-</option>
+                                                            <option value="Cédula de ciudadanía">Cédula de ciudadanía</option>
+                                                            <option value="Tarjeta de identidad">Tarjeta de identidad</option>
+                                                            <option value="Cédula de extranjería">Cédula de extranjería</option>
+                                                            <option value="NUIP">NUIP</option>
+                                                            <option value="Pasaporte">Pasaporte</option>
+                                                            <option value="Registro civil">Registro civil</option>
+                                                         </select>
+                                                         <div class="zcwf_col_help"></div>
+                                                      </div>
+                                                   </div>
+                                                   <div class="zcwf_row">
+                                                      <div class="zcwf_col_lab" style="font-size:12px; font-family: Arial;"><label for="LEADCF12">Documento No<span style="color:red;">*</span></label></div>
+                                                      <div class="zcwf_col_fld">
+                                                         <input type="text" id="LEADCF12" name="LEADCF12" minlength="6" maxlength="16" placeholder="Número de documento*">
+                                                         <div class="zcwf_col_help"></div>
+                                                      </div>
+                                                   </div>
+                                                   <div class="zcwf_row">
+                                                      <div class="zcwf_col_lab" style="font-size:12px; font-family: Arial;"><label for="Email">Correo electrónico<span style="color:red;">*</span></label></div>
+                                                      <div class="zcwf_col_fld">
+                                                         <input type="text" ftype="email" id="Email" name="Email" placeholder="Mail*" maxlength="100">
+                                                         <div class="zcwf_col_help"></div>
+                                                      </div>
+                                                   </div>
+                                                   <div class="zcwf_row">
+                                                      <div class="zcwf_col_lab" style="font-size:12px; font-family: Arial;"><label for="Mobile">Móvil<span style="color:red;">*</span></label></div>
+                                                      <div class="zcwf_col_fld">
+                                                         <input type="text" id="Mobile" name="Mobile" minlength="7" maxlength="10" placeholder="Teléfono fijo y/o celular*" pattern="[0-9]+">
+                                                         <div class="zcwf_col_help"></div>
+                                                      </div>
+                                                   </div>
+                                                   <div class="zcwf_row">
+                                                      <div class="zcwf_privacy">
+                                                         <div class="dIB vat" align="left">
+                                                            <div class="displayPurpose  f13"><label class="newCustomchkbox-md dIB w100per"><input autocomplete="off" id="privacyTool" type="checkbox" name="privacyTool" onclick="disableErr()"></label></div>
+                                                         </div>
+                                                         <div class="dIB zcwf_privacy_txt" style="font-size: 12px;font-family:Arial;color: black;">Acepto la <a href="https://www.uninpahu.edu.co/wp-content/uploads/2020/09/Politica-de-Proteccion-de-Datos.pdf" title="https://www.uninpahu.edu.co/wp-content/uploads/2020/09/Politica-de-Proteccion-de-Datos.pdf" target="_blank" rel="noopener noreferrer">Política de privacidad</a> y los Términos de servicio.</div>
+                                                         <div id="privacyErr" style="font-size:12px;color:red;padding-left: 5px;visibility:hidden;">Acepte por favor</div>
+                                                      </div>
+                                                   </div>
+                                                   <div class="zcwf_row">
+                                                      <div class="zcwf_col_lab"></div>
+                                                      <div class="zcwf_col_fld"><input type="submit" id="formsubmit" class="formsubmit zcwf_button" value="Enviar" title="Enviar"><input type="reset" class="zcwf_button" name="reset" value="Restablecer" title="Restablecer"></div>
+                                                   </div>
+                                                   <script>
+                                                      var mndFileds=new Array('First Name','Last Name','LEADCF5','LEADCF13','LEADCF12','Email','Mobile');
+                                                      var fldLangVal=new Array('Nombre','Apellidos','Programa de interés','Tipo de documento de identidad','Documento No','Correo electrónico','Móvil'); 
+                                                       var name='';
+                                                       var email='';
+                                                       function privacyAlert()
+                                                       {
+                                                           if(document.getElementById('privacyTool') !=undefined && !document.getElementById('privacyTool').checked )
+                                                           {
+                                                               document.getElementById('privacyErr').style.visibility='visible';
+                                                               document.getElementById('privacyTool').focus();
+                                                               return false;
+                                                           }
+                                                           return true;
+                                                       }
+                                                       function disableErr()
+                                                       {
+                                                           if(document.getElementById('privacyTool') !=undefined && document.getElementById('privacyTool').checked && document.getElementById('privacyErr') !=undefined )
+                                                           {
+                                                               document.getElementById('privacyErr').style.visibility='hidden';
+                                                           }
+                                                       }
+                                                      function validateEmail()
+                                                      {
+                                                       var emailFld = document.querySelectorAll('[ftype=email]');
+                                                       var i;
+                                                       for (i = 0; i < emailFld.length; i++)
+                                                       {
+                                                           var emailVal = emailFld[i].value;
+                                                           if((emailVal.replace(/^\s+|\s+$/g, '')).length!=0 )
+                                                           {
+                                                               var atpos=emailVal.indexOf('@');
+                                                               var dotpos=emailVal.lastIndexOf('.');
+                                                               if (atpos<1 || dotpos<atpos+2 || dotpos+2>=emailVal.length)
+                                                               {
+                                                                   alert('Introduzca una dirección de correo electrónico válida. ');
+                                                                   emailFld[i].focus();
+                                                                   return false;
+                                                               }
+                                                           }
+                                                       }
+                                                       return true;
+                                                      }
+                                                      
+                                                      function checkMandatory3527873000036832025() {
+                                                       for(i=0;i<mndFileds.length;i++) {
+                                                         var fieldObj=document.forms['WebToLeads3527873000036832025'][mndFileds[i]];
+                                                         if(fieldObj) {
+                                                           if (((fieldObj.value).replace(/^\s+|\s+$/g, '')).length==0) {
+                                                            if(fieldObj.type =='file')
+                                                               { 
+                                                                alert('Seleccione un archivo para cargar.'); 
+                                                                fieldObj.focus(); 
+                                                                return false;
+                                                               } 
+                                                           alert(fldLangVal[i] +' no puede estar vacío.'); 
+                                                                     fieldObj.focus();
+                                                                     return false;
+                                                           }  else if(fieldObj.nodeName=='SELECT') {
+                                                                    if(fieldObj.options[fieldObj.selectedIndex].value=='-None-') {
+                                                               alert(fldLangVal[i] +' no puede ser nulo.'); 
+                                                               fieldObj.focus();
+                                                               return false;
+                                                              }
+                                                           } else if(fieldObj.type =='checkbox'){
+                                                               if(fieldObj.checked == false){
+                                                               alert('Please accept  '+fldLangVal[i]);
+                                                               fieldObj.focus();
+                                                               return false;
+                                                              } 
+                                                            } 
+                                                            try {
+                                                                if(fieldObj.name == 'Last Name') {
+                                                               name = fieldObj.value;
+                                                                  }
+                                                           } catch (e) {}
+                                                           }
+                                                       }
+                                                       if(!validateEmail()){return false;}
+                                                       
+                                                       if(!privacyAlert()){return false;}
+                                                       document.querySelector('.crmWebToEntityForm .formsubmit').setAttribute('disabled', true);
+                                                      }
+                                                      
+                                                      function tooltipShow(el){
+                                                      var tooltip = el.nextElementSibling;
+                                                      var tooltipDisplay = tooltip.style.display;
+                                                      if(tooltipDisplay == 'none'){
+                                                       var allTooltip = document.getElementsByClassName('zcwf_tooltip_over');
+                                                       for(i=0; i<allTooltip.length; i++){
+                                                           allTooltip[i].style.display='none';
+                                                       }
+                                                       tooltip.style.display = 'block';
+                                                      }else{
+                                                       tooltip.style.display='none';
+                                                      }
+                                                      }
+                                                   </script>
+                                                   
+                                                </form>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                             
+                           </div>
 
+                           <footer class="entry-footer"></footer>
+                        </article>
+                     </main>
+                  </div>
+               </div>
+            </div>
+         </div>
 
-<script type="text/javascript">
-    var map, geocoder;
-    window.onload = function () {
-      var latlng = new google.maps.LatLng(40.323892 , -3.852782 );
-      var mapOptions = {
-        zoom: 15,
-        center: latlng,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-      };
-      map = new google.maps.Map(document.getElementById('mapa'), mapOptions);
-      // llama a la funcion
-      geocoder = new google.maps.Geocoder();
-    };
+         <!-- FOOTER -->
+         <div class="wrapper" id="wrapper-footer">
+            <div class="container-fluid">
+               <div class="row">
+                  <div class="col-md-12">
+                     <div class="container">
+                        <div class="row mapa-del-sitio">
+                           <div class="col-md-3 col-6">
+                              <h4>ADMISIONES</h4>
+                              <ul>
+                                 <li><a href="https://www.uninpahu.edu.co/proceso-de-inscripcion/">Proceso de inscripción</a></li>
+                                 <li><a href="https://www.uninpahu.edu.co/financiacion/">Financiación</a></li>
+                                 <li><a href="https://www.uninpahu.edu.co/tu-colegio-en-la-u/">Tu colegio en la U</a></li>
+                                 <li><a href="https://www.uninpahu.edu.co/edutour-virtual/">Edutour Virtual</a></li>
+                                 <li><a href="https://www.uninpahu.edu.co/proceso-de-inscripcion/#tab-strongtransferenciainternastrong">Transferencia interna, reintegros y homologaciones</a></li>
+                                 <li><a href="https://www.uninpahu.edu.co/financiacion">Medios de pago</a></li>
+                                 <li><a href="https://www.uninpahu.edu.co/estudiantes/preguntas-frecuentes">Preguntas frecuentes</a></li>
+                              </ul>
+                              <h4>BIENESTAR</h4>
+                              <ul>
+                                 <li><a href="https://www.uninpahu.edu.co/bienestar-universitario/">Bienestar</a></li>
+                                 <li><a href="https://www.uninpahu.edu.co/bienestar-universitario/actividades-y-eventos-de-bienestar/">Actividades de Bienestar</a></li>
+                                 <!--                <li><a href="https://www.uninpahu.edu.co">Horario actividades bienestar</a></li>-->
+                                 <li><a href="https://www.uninpahu.edu.co/internacionalizacion">Internacionalización</a></li>
+                              </ul>
+                              <h4>BIBLIOTECA</h4>
+                              <ul>
+                                 <li><a href="https://www.uninpahu.edu.co/biblioteca">Biblioteca</a></li>
+                                 <li><a href="https://www.uninpahu.edu.co/biblioteca/#tab-strongstrongbasesdedatosyrecursoselectrnicosstrongstrong">Bases de datos y recursos electrónicos </a></li>
+                                 <li><a href="https://www.uninpahu.edu.co/biblioteca/#tab-strongstronggestoresbibliogrficosstrongstrong">Gestores bibliográficos</a></li>
+                                 <li><a href="https://www.uninpahu.edu.co/biblioteca/#tab-strongstrongherramientasparalainvestigacinstrongstrong">Herramientas para la investigación</a> </li>
+                                 <li><a href="https://www.uninpahu.edu.co/biblioteca/#tab-stronglibroselectrnicosstrong">Libros electrónicos </a> </li>
+                                 <li><a href="https://www.uninpahu.edu.co/biblioteca/#tab-strongstrongrepositoriosinstitucionalesstrongstrong">Repositorios institucionales</a></li>
+                              </ul>
+                           </div>
+                           <div class="col-md-3 col-6">
+                              <h4>GESTIÓN INTEGRAL DE LA CALIDAD</h4>
+                              <ul>
+                                 <li><a href="https://www.uninpahu.edu.co/sistema-interno-de-la-calidad/">Sistema Integrado de Gestión Institucional – SIGI</a></li>
+                              </ul>
+                              <h4>SERVICIOS ACADÉMICOS</h4>
+                              <ul>
+                                 <li><a href="http://tecnologias.inpahu.edu.co/moodle/" target="_blank">Aulas Virtuales</a></li>
+                                 <li>Servicios Académicos</li>
+                                 <li>Sistema, apoyo y tutorías</li>
+                                 <li><a href="https://oas1012.uninpahu.edu.co/ulises/" target="_blank">ULISES</a> </li>
+                                 <li>Encuestas M.A.R. </li>
+                                 <li><a href="https://www.uninpahu.edu.co/gestion_academica/" target="_blank">Gestión Académica</a></li>
+                              </ul>
+                              <h4>INVESTIGACIÓN</h4>
+                              <ul>
+                                 <li>Sistema institucional de investigación</li>
+                                 <li><a href="https://www.uninpahu.edu.co/investigacion">Presentación de investigación </a></li>
+                                 <li><a href="https://www.uninpahu.edu.co/investigacion#grupos">Grupos de investigación </a></li>
+                                 <li>Divulgación científica</li>
+                                 <li><a href="https://www.uninpahu.edu.co/investigacion/#semilleros">Semilleros </a> </li>
+                                 <li>Internacionalización de la investigación</li>
+                              </ul>
+                           </div>
+                           <div class="col-md-3 col-6">
+                              <h4>DOCENTES</h4>
+                              <ul>
+                                 <li><a href="https://oas1012.uninpahu.edu.co/sirena/" target="_blank">SIRENA </a></li>
+                                 <li><a href="https://oas1012.uninpahu.edu.co/seven/" target="_blank">Autoevaluación </a></li>
+                                 <li><a href="https://www.uninpahu.edu.co/investigacion">Investigación </a></li>
+                                 <li><a href="https://www.uninpahu.edu.co/wp-content/uploads/2020/09/Reglamento-Docente.pdf"></a>Reglamento docente </li>
+                                 <li><a href="http://tecnologias.inpahu.edu.co/moodle/" target="_blank">Aulas Virtuales</a></li>
+                                 <li><a href="https://www.uninpahu.edu.co/gestion_academica/" target="_blank">Gestión Académica</a></li>
+                              </ul>
+                              <h4>EGRESADOS</h4>
+                              <ul>
+                                 <li>RED Uninpahuista</li>
+                                 <li><a href="https://personas.serviciodeempleo.gov.co/" target="_blank">Bolsa de empleo</a></li>
+                                 <li><a href="https://www.uninpahu.edu.co/egresados/continua">Educación continua </a></li>
+                                 <li>Alianzas </li>
+                                 <li><a href="https://www.uninpahu.edu.co/egresados#servicios">Servicios</a> </li>
+                                 <li><a href="https://oas1012.uninpahu.edu.co/sil/" target="_blank">Actualización de datos</a> </li>
+                                 <li><a href="https://www.uninpahu.edu.co/bienestar-universitario">Bienestar para egresados</a></li>
+                              </ul>
+                              <h4>EXTENSIÓN</h4>
+                              <ul>
+                                 <li><a href="https://www.uninpahu.edu.co/extension/centro-de-entrenamiento-en-alturas/">Centro de entrenamiento en alturas </a></li>
+                                 <li><a href="https://www.uninpahu.edu.co/extension/centro-de-idiomas/">Centro de idiomas</a> </li>
+                                 <li><a href="https://www.uninpahu.edu.co/extension/centro-gastronomico/">Centro gastronómico</a> </li>
+                                 <li><a href="https://www.uninpahu.edu.co/extension/centro-de-educacion-continua//">Centro de Educación Continua</a> </li>
+                              </ul>
+                           </div>
+                           <div class="col-md-3 col-6">
+                              <h4>NOSOTROS</h4>
+                              <ul>
+                                 <li><a href="https://www.uninpahu.edu.co/nosotros">Nuestra trayectoria</a></li>
+                                 <li><a href="https://www.uninpahu.edu.co/nosotros/#mision">Misión </a></li>
+                                 <li><a href="https://www.uninpahu.edu.co/wp-content/uploads/2020/10/Resol-002070-5-marzo-2019.pdf">Estatutos </a></li>
+                                 <li><a href="https://www.uninpahu.edu.co/wp-content/uploads/2021/11/organigrama-estructural-.pdf">Estructura orgánica</a></li>
+                                 <li><a href="https://www.uninpahu.edu.co/nosotros#documentos">Documentos institucionales</a> </li>
+                                 <li><a href="https://www.uninpahu.edu.co/wp-content/uploads/2021/12/Acuerdo-209-322-2021-Derechos-pecuniarios.pdf" target="_blank">Derechos pecuniarios</a></li>
+                                 <li><a href="https://www.uninpahu.edu.co/wp-content/uploads/2022/03/calendario-academico-2022-v2.pdf">Calendario Académico 2022</a></li>
+                                 <li><a href="https://www.uninpahu.edu.co/transparencia-y-acceso-a-informacion-publica/">Transparencia y Acceso a la Información Pública</a></li>
+                              </ul>
+                              <h4>CONTACTO</h4>
+                              <ul>
+                                 <li>Mapa campus</li>
+                                 <li><a href="https://www.uninpahu.edu.co/comentarios-y-sugerencias/">Comentarios y sugerencias</a></li>
+                                 <li><a href="https://www.uninpahu.edu.co/directorio-de-contacto/">Directorio de contacto</a></li>
+                              </ul>
+                              <h4>Síguenos</h4>
+                              <ul>
+                                 <li>
+                                    <a href="https://www.facebook.com/Uninpahuoficial" target="_blank">
+                                    <img src="https://www.uninpahu.edu.co/wp-content/themes/understrap-child/img/icono-facebook.svg" alt="" style="height:20px; width:auto;">
+                                    </a> 
+                                    <a href="https://twitter.com/UNINPAHU" target="_blank">
+                                    <img src="https://www.uninpahu.edu.co/wp-content/themes/understrap-child/img/icono-twitter.svg" alt="" style="height:20px; width:auto;">
+                                    </a>
+                                    <a href="https://www.instagram.com/uninpahu/" target="_blank">
+                                    <img src="https://www.uninpahu.edu.co/wp-content/themes/understrap-child/img/icono-instagram.svg" alt="" style="height:20px; width:auto;">
+                                    </a> 
+                                    <a href="https://www.linkedin.com/in/uninpahu-oficial-22239838/?lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_top%3BF9mkXXt3RryavrjybgpsBA%3D%3D&amp;licu=urn%3Ali%3Acontrol%3Ad_flagship3_search_srp_top-search_srp_result&amp;lici=LnLqYAcURCWJlEWb3F3lOA%3D%3D" target="_blank">
+                                    <img src="https://www.uninpahu.edu.co/wp-content/themes/understrap-child/img/icono-linkedin.svg" alt="" style="height:20px; width:auto;">
+                                    </a> 
+                                    <a href="https://www.youtube.com/channel/UCEmq4tDqXr65xERbZq6oDOw?view_as=subscriber" target="_blank">
+                                    <img src="https://www.uninpahu.edu.co/wp-content/themes/understrap-child/img/icono-youtube.svg" alt="" style="height:20px; width:auto;">
+                                    </a> 
+                                    <a href="http://s.kw.ai/Bg8Srs1C" target="_blank">
+                                    <img src="https://www.uninpahu.edu.co/wp-content/themes/understrap-child/img/icono-kwai.svg" alt="" style="height:20px; width:auto;">
+                                    </a>
+                                    <a href="https://vm.tiktok.com/ZMd7NhVg1/" target="_blank">
+                                    <img src="https://www.uninpahu.edu.co/wp-content/themes/understrap-child/img/icono-tiktok.svg" alt="" style="height:20px; width:auto;">
+                                    </a>
+                                 </li>
+                              </ul>
+                           </div>
+                           <div class="col-md-12 col-12">
+                              <h4>Línea de servicios y admisiones</h4>
+                              <ul>
+                                 <li><img src="https://www.uninpahu.edu.co/wp-content/themes/understrap-child/img/pointer.svg" alt=""> © 2021 UNINPAHU Carrera 16 No. 39 A-77/ Bogotá, D. C. Colombia  </li>
+                                 <li><img src="https://www.uninpahu.edu.co/wp-content/themes/understrap-child/img/telefono.svg" alt=""> Canales de atención telefónica: En Bogotá 601-3323500</li>
+                                 <li><img src="https://www.uninpahu.edu.co/wp-content/themes/understrap-child/img/sobre.svg" alt=""> Correo Electrónico: <a href="mailto:uninpahu@uninpahu.edu.co">uninpahu@uninpahu.edu.co</a></li>
+                                 <li><img src="https://www.uninpahu.edu.co/wp-content/themes/understrap-child/img/sobre.svg" alt=""> Atención al estudiante: <a href="mailto:admisiones@uninpahu.edu.co">admisiones@uninpahu.edu.co</a></li>
+                                 <li><img src="https://www.uninpahu.edu.co/wp-content/themes/understrap-child/img/sobre.svg" alt=""> Buzón exclusivo para efectos de notificaciones judiciales: <a href="mailto:notificacionesjudiciales@uninpahu.edu.co">notificacionesjudiciales@uninpahu.edu.co </a></li>
+                                 <li>Horario de Atención: Lunes a viernes de 8 a.m. a 6 p.m. y Sábados de 8 a.m. a 12 p.m.- Recibo de correspondencia externa de 8 a.m. a 6 p.m.</li>
+                              </ul>
+                           </div>
+                           <div class="col-md-12 barra d-md-block d-none">
+                              <hr>
+                           </div>
+                           <div class="col-md-12 text-center logo">
+                              <img src="https://www.uninpahu.edu.co/wp-content/themes/understrap-child/img/logo-uninpahu-blanco.svg" alt="" width="266" height="45"><br>
+                              <img src="https://www.uninpahu.edu.co/wp-content/themes/understrap-child/img/vigilado-min-educacion.svg" alt="" width="200" height="40">
+                              <p>PERSONERIA JURIDICA RECONOCIDA MEDIANTE RESOLUCION NUMERO 16971 DEL 09 DE OCTUBRE DE 1981</p>
+                           </div>
+                        </div>
+                     </div>
+                     <footer class="site-footer" id="colophon">
+                     </footer>
+                     <!-- #colophon -->
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
      
-    function codeAddress() {
-      var address = document.getElementById('address').value;
-      // Función completa de Geocoding
-      geocoder.geocode({
-        'address': address
-    // 'latLng': latlng si lo que queremos ejecutar en geocodificación inversa
-      }, function (results, status) {
-        if (status == google.maps.GeocoderStatus.OK) {
-          document.getElementById('x').innerHTML = results[0].geometry.location.lat().toFixed(6);
-          document.getElementById('y').innerHTML = results[0].geometry.location.lng().toFixed(6);
-          map.setCenter(results[0].geometry.location);
-          document.getElementById('direccion').innerHTML = results[0].formatted_address;
-          var marker = new google.maps.Marker({
-            map: map,
-            position: results[0].geometry.location
-          });
-    	  //podemos personalisar el toltip aqui
-          infowindow = new google.maps.InfoWindow({
-            content: '<h4>JK electricidad</h4>'+results[0].formatted_address + '<br> Latitud: ' + results[0].geometry.location.lat().toFixed(6) + '<br> Longitud: ' + results[0].geometry.location.lng().toFixed(6)
-          });
-          infowindow.open(map, marker)
-        }
-    // Se detallan los diferentes tipos de error
-    else {
-          alert('Geocode no tuvo éxito por la siguiente razón: ' + status)
-        }
-      })
-    };
-</script>
+  	<script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+    <script type="text/javascript">
+    	
+    	mapboxgl.accessToken = 'pk.eyJ1IjoiYnJlZHlidWl0cmFnbyIsImEiOiJjbDE4ajZnZXUxemV3M2puMW0wZ3M2NGNjIn0.5ckPAuGIlVaIBRGtBmdPAQ';
+		const map = new mapboxgl.Map({
+		  container: 'map',
+		  style: 'mapbox://styles/mapbox/streets-v11',
+		  // style: 'mapbox://styles/mapbox/satellite-v9',
+		  center: [ -74.06988568654656,4.629458462288341],
+		  zoom: 19,
+
+		  // interactive: false
+		  // scrollZoom: false
+		});
+		var marker = [];
+		new mapboxgl.Marker({});
+		let c = [];
 
 
+		function createMarker(){
+
+		  for(var i = 0; i < c.length; i++){
+		  m = new mapboxgl.Marker({})
+		                    .setLngLat([c[i].lng, c[i].lat])
+		                    .addTo(map);
+		    marker.push(m);
+		  }
+		}
+
+		function add_marker (event) {
+		  var coordinates = event.lngLat;
+
+		  console.log('Lng:', coordinates.lng, 'Lat:', coordinates.lat);
+		  c.push(coordinates);
+		  createMarker();
+		  console.log(c)
+		}
+
+		map.on('click', add_marker);
+
+		function clearing() {
+		  c = [];
+		  for (var i = marker.length - 1; i >= 0; i--) {    
+		  marker[i].remove();
+		  }  
+		}
+
+		 map.on('load', () => {
+		        // Add a data source containing GeoJSON data.
+		        map.addSource('maine', {
+		            'type': 'geojson',
+		            'data': {
+		                'type': 'Feature',
+		                'geometry': {
+		                    'type': 'Polygon',
+		                    // These coordinates outline Maine.
+		                    'coordinates': [
+		                        [
+
+		                            [-74.07011835830257, 4.6297104550172286],
+		                            [-74.07001509326619, 4.629691740815628],
+		                            [-74.069905122708, 4.629662332783514],
+		                            [-74.06987159509879, 4.6296168840042204],
+		                            [-74.06978710552359, 4.629730505946983],
+		                            [-74.0695537533635, 4.6295700984930725],
+		                            [-74.06962885520811, 4.629469843815919],
+		                            [-74.06973882576632, 4.629344191267153],
+		                            [-74.06988634724684, 4.629169079699218],
+		                            [-74.07016529695545, 4.629413701190503],
+		                            [-74.07011835830257, 4.6297104550172286]
+
+		                        ]
+		                    ]
+		                }
+		            }
+		        });
+
+		        // Add a new layer to visualize the polygon.
+		        map.addLayer({
+		            'id': 'maine',
+		            'type': 'fill',
+		            'source': 'maine', // reference the data source
+		            'layout': {},
+		            'paint': {
+		                'fill-color': '#0080ff', // blue color fill
+		                'fill-opacity': 0.1
+		            }
+		        });
+		        // Add a black outline around the polygon.
+		        map.addLayer({
+		            'id': 'outline',
+		            'type': 'line',
+		            'source': 'maine',
+		            'layout': {},
+		            'paint': {
+		                'line-color': '#000',
+		                'line-width': 3
+		            }
+		        });
+		    });
 
 
-  </body>
+		map.addControl(new mapboxgl.NavigationControl());
+		map.addControl(new mapboxgl.FullscreenControl());
+		map.addControl(new mapboxgl.GeolocateControl({
+		    positionOptions: {
+		        enableHighAccuracy: true
+		    },
+		    trackUserLocation: true
+		}));
+    </script>
+      
+   </body>
 </html>
